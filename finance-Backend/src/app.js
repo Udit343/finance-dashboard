@@ -19,7 +19,7 @@ app.use(express.json());
 
 
 //check  quickly confirm server is alive
-app.get("/ckeck",(req,res)=>{
+app.get("/",(req,res)=>{
     //console.log("Root route hit");
     res.json({status:"Server Running"})
 })
