@@ -4,6 +4,8 @@ import cors from "cors";
 import errorHandler from "./utils/errorHandler.js";
 import authRoutes from "./routes/auth.route.js";
 import userRoutes from "./routes/user.route.js";
+import recordRoutes from "./routes/record.routes.js";
+import dashboardRoutes from "./routes/dashboard.routes.js";
 
 const app=express();
 
@@ -17,7 +19,7 @@ app.use(express.json());
 
 
 //check  quickly confirm server is alive
-app.get("/",(req,res)=>{
+app.get("/ckeck",(req,res)=>{
     //console.log("Root route hit");
     res.json({status:"Server Running"})
 })
@@ -26,6 +28,8 @@ app.get("/",(req,res)=>{
 // routes
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/records", recordRoutes);
+app.use("/api/dashboard", dashboardRoutes);
 
 
 
