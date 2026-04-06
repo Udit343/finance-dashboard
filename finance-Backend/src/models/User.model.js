@@ -45,8 +45,8 @@ const userSchema=new mongoose.Schema({
 
 userSchema.pre("save", async function (next) {
 
-  // only hash if password was actually changed — prevents re-hashing on other updates
-  if (!this.isModified("password")) return next()
+  // only hash if password was actually changed prevents re-hashing on other updates
+  if (!this.isModified("password")) return 
   this.password = await bcrypt.hash(this.password, 12)
 })
 

@@ -85,7 +85,6 @@ financialRecordSchema.pre(/^find/, function (next) {
   if (this._conditions.isDeleted === undefined) {
     this.where({ isDeleted: false })
   }
-  next()
 })
 
 financialRecordSchema.index({ date: -1 })
